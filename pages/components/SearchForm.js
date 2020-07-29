@@ -38,7 +38,7 @@ const SearchForm = ({ categories }) => {
         <Box marginTop={[2]}>
           {/* the searching component using a Categorical Term or pick up a random fact  */}
           <CategorySearch
-            categories={categories}
+            categories={categories || []}
             handleCategory={handleCategory}
             handleRandom={handleRandom}
           />

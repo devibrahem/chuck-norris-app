@@ -13,15 +13,15 @@ const Home = ({ categories }) => {
         <title>Norris Facts</title>
       </Head>
       <DancingChuck />
-      <SearchForm categories={categories} />
+      <SearchForm categories={categories || []} />
     </Box>
   );
 };
 
-// Statically generating the index page with Data to improve performance
+// rendering the index page with Data to improve performance at runtime
 // fetching external data (from the API) and pre-rendered the index page with this data
-// This function gets called at build time on server-side.
-export async function getStaticProps() {
+// This function gets called at runtime on server-side.
+export async function getServerSideProps() {
   const res = await fetch("https://api.chucknorris.io/jokes/categories");
   const categories = await res.json();
 

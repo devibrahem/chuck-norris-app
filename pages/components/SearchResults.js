@@ -1,10 +1,13 @@
 import { Box, Flex, Image, Text } from "rebass";
 
-const SearchResults = ({ fact }) => {
-  // displaying the facts results corresponding to the category if available
+const SearchResults = ({
+  fact = { categories: [], icon_url: "#", value: "empty" },
+}) => {
   const { categories, icon_url, value } = fact;
+
   return (
     <Box>
+      {/* displaying the facts results corresponding to the category if available */}
       {categories.length ? (
         <Text
           textAlign={"center"}
