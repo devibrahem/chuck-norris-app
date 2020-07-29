@@ -8,17 +8,6 @@ import SearchResults from "./SearchResults";
 const SearchForm = ({ categories }) => {
   const [facts, setFacts] = useState([]);
 
-  //   //Fetch the avaiable Categories and save them to categories list
-  //   const [categories, setCategories] = useState([]);
-
-  //   useEffect(() => {
-  //     fetch("https://api.chucknorris.io/jokes/categories")
-  //       .then((response) => response.json())
-  //       .then((list) => {
-  //         setCategories(list);
-  //       });
-  //   }, []);
-
   // Handler Functions
 
   const handleCategory = async (categoryVal) => {

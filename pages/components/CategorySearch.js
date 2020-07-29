@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box } from "rebass";
-import { InputSubmit, InputSelect } from "../views/FormElements";
+import { InputSubmit, InputSelect } from "../../views/FormElements";
 
 function CategorySearch({ handleCategory, handleRandom, categories }) {
   // t passes and calls the catergory function in the parent or trigger the random fact function

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box } from "rebass";
-import { InputText, InputSubmit } from "../views/FormElements";
+import { InputText, InputSubmit } from "../../views/FormElements";
 
 const FreeSearch = ({ handleQuery }) => {
   // passes and calls the search query function in the parent

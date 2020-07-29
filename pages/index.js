@@ -1,5 +1,5 @@
 import { Box } from "rebass";
-import DancingChuck from "./views/DancingChuck";
+import DancingChuck from "../views/DancingChuck";
 import SearchForm from "./components/SearchForm";
 import Head from "next/head";
 import fetch from "node-fetch";
@@ -7,7 +7,7 @@ const Home = ({ categories }) => {
   return (
     <Box>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="Norris API facts Generator Site" />
         <title>Norris Facts</title>
