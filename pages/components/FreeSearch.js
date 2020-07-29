@@ -1,11 +1,17 @@
+import { useState } from "react";
 import { Box } from "rebass";
 import { InputText, InputSubmit } from "../views/FormElements";
 
-const FreeSearch = () => {
+const FreeSearch = ({ handleQuery }) => {
+  // passes and calls the search query function in the parent
+  const [queryVal, SetQueryVal] = useState();
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
+        handleQuery(queryVal);
+        SetQueryVal("");
       }}
       style={{ textAlign: "center", marginTop: "14px" }}
     >
@@ -19,6 +25,10 @@ const FreeSearch = () => {
           type="text"
           name="search"
           id="search"
+          value={queryVal}
+          onChange={(e) => {
+            SetQueryVal(e.target.value);
+          }}
         />
       </Box>
       <InputSubmit type="submit" value="Search" id="submit-query" />

@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { Box } from "rebass";
 import { InputSubmit, InputSelect } from "../views/FormElements";
 
-const CategorySearch = () => {
+const CategorySearch = ({ handleCategory, handleRandom, categories }) => {
+  // t passes and calls the catergory function in the parent or trigger the random fact function
+  const [categoryVal, SetCategoryVal] = useState("animal");
   return (
     <form
       style={{ textAlign: "center" }}
@@ -13,12 +16,35 @@ const CategorySearch = () => {
         Pick a fact type
       </label>
       <Box margin={[2]}>
-        <InputSelect autoFocus defaultValue={"animal"} name="fact" id="fact">
-          <option value="something">something</option>
+        <InputSelect
+          autoFocus
+          defaultValue={"animal"}
+          name="fact"
+          id="fact"
+          onChange={(e) => {
+            SetCategoryVal(e.target.value);
+          }}
+        >
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
         </InputSelect>
       </Box>
-      <InputSubmit type="submit" value="Search" id="submit-category" default />
-      <InputSubmit type="submit" id="submit-random" value="a Random Fact" />
+      <InputSubmit
+        type="submit"
+        value="Search"
+        id="submit-category"
+        onClick={() => handleCategory(categoryVal)}
+        default
+      />
+      <InputSubmit
+        type="submit"
+        id="submit-random"
+        value="a Random Fact"
+        onClick={() => handleRandom()}
+      />
     </form>
   );
 };
