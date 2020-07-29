@@ -5,19 +5,19 @@ import CategorySearch from "./CategorySearch";
 import FreeSearch from "./FreeSearch";
 import SearchResults from "./SearchResults";
 
-const SearchForm = () => {
+const SearchForm = ({ categories }) => {
   const [facts, setFacts] = useState([]);
 
-  //Fetch the avaiable Categories and save them to categories list
-  const [categories, setCategories] = useState([]);
+  //   //Fetch the avaiable Categories and save them to categories list
+  //   const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    fetch("https://api.chucknorris.io/jokes/categories")
-      .then((response) => response.json())
-      .then((list) => {
-        setCategories(list);
-      });
-  }, []);
+  //   useEffect(() => {
+  //     fetch("https://api.chucknorris.io/jokes/categories")
+  //       .then((response) => response.json())
+  //       .then((list) => {
+  //         setCategories(list);
+  //       });
+  //   }, []);
 
   // Handler Functions
 

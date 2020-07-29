@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box } from "rebass";
 import { InputSubmit, InputSelect } from "../views/FormElements";
 
-const CategorySearch = ({ handleCategory, handleRandom, categories }) => {
+function CategorySearch({ handleCategory, handleRandom, categories }) {
   // t passes and calls the catergory function in the parent or trigger the random fact function
   const [categoryVal, SetCategoryVal] = useState("animal");
   return (
@@ -46,6 +46,6 @@ const CategorySearch = ({ handleCategory, handleRandom, categories }) => {
       />
     </form>
   );
-};
+}
 
 export default CategorySearch;
