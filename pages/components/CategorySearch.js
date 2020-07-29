@@ -17,7 +17,6 @@ const CategorySearch = ({ handleCategory, handleRandom, categories }) => {
       </label>
       <Box margin={[2]}>
         <InputSelect
-          autoFocus
           defaultValue={"animal"}
           name="fact"
           id="fact"
